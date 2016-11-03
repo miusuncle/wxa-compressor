@@ -116,7 +116,7 @@ const _optWXML = function (filePath, cb) {
     .pipe(replace(/(>\s)/g, '>'))
     .pipe(replace(/(\s<)/g, '<'))
     // 删除注释
-    // .pipe(replace(/<!--[\w\W\r\n]*?-->/g, ''))
+    .pipe(replace(/<!--[\w\W\r\n]*?-->/g, ''))
     .pipe(gulp.dest(conf.prodPath));
   cb();
 };
